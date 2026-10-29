@@ -2,7 +2,7 @@ not_in_scope: []
 models:
   - provider: openai
     model_id: gpt-4o
-    region: us-east-1
+    region: us-west-2
     reason: Synthetic deployment declared for this manual test.
 tools: []
 data_classes: []
