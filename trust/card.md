@@ -6,9 +6,9 @@
 
 - **System:** sibling-b
 - **Repository:** `sibling-b`
-- **Commit:** `2d359e6afac9c9651c0596a164e8d0d48ca36dda`
-- **Graph fingerprint:** `c6442fba043f`
-- **Full fingerprint (SHA-256):** `c6442fba043f91b5e61148a445280b3a16e188aa2b2001430792ab9fc93c41b5`
+- **Commit:** `3712dc1d760d971d69a60fafde13f4bac67f93da`
+- **Graph fingerprint:** `862f108bee16`
+- **Full fingerprint (SHA-256):** `862f108bee161a1e39dcf1e3180574cba0c86a69e6d9395eda706bb8ab77236f`
 - **CLI version:** `1.0.0`
 - **Description:** Synthetic sibling source for MTP-30/31 import tests.
 - **Customer-facing name:** Sibling B Service
@@ -24,7 +24,7 @@
 
 | Provider | Model | Region | Endpoint | Source | Cite |
 |---|---|---|---|---|---|
-| openai | gpt-4o | us-east-1 | unknown | manual | `trust/manual.yml:3` |
+| openai | gpt-4o | us-west-2 | unknown | manual | `trust/manual.yml:3` |
 
 ## Declared subprocessors
 
@@ -116,40 +116,5 @@ Ecosystems are recognised from tracked manifest and lockfile names only; an ecos
 
 ## Generated from
 
-Commit `2d359e6afac9c9651c0596a164e8d0d48ca36dda` using AI TrustBOM CLI `1.0.0`.
-
-## Gate assessment
-
-- **Status:** bootstrap required
-- **Summary:** The gate is blocked because this repository has no reviewed graph approval.
-
-### Semantic changes
-
-No semantic graph changes are available.
-
-### Required actions
-
-#### The approval file is still the unsigned template
-
-trust/approvals.yml exists but is still the unsigned template. The first graph must be reviewed by Trust before it can become the baseline.
-
-Choose the appropriate resolution:
-
-- Review the generated system card and repository evidence.
-- Replace the template in trust/approvals.yml with the approval below and complete every human-owned value.
-- Request the configured Trust or CODEOWNER review; check the full graph before approving its fingerprint.
-
-Example:
-
-```yaml
-approved_graph_sha: c6442fba043f91b5e61148a445280b3a16e188aa2b2001430792ab9fc93c41b5
-approved_by: <Trust reviewer>
-approved_at: <ISO-8601 timestamp>
-high_risk: unset
-article_50: unset
-```
-
-### Next step
-
-Have Trust review graph fingerprint c6442fba043f and commit trust/approvals.yml. Copy the full fingerprint from the approval template above.
+Commit `3712dc1d760d971d69a60fafde13f4bac67f93da` using AI TrustBOM CLI `1.0.0`.
 
