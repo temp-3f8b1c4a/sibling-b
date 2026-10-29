@@ -6,3 +6,8 @@
 # approved_at: <ISO-8601 timestamp with offset>
 # high_risk: unset
 # article_50: unset
+approved_graph_sha: c6442fba043f91b5e61148a445280b3a16e188aa2b2001430792ab9fc93c41b5
+approved_by: "trustbom-trust"
+approved_at: 2026-10-29T14:08:21Z
+high_risk: unset
+article_50: unset
