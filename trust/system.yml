@@ -1,0 +1,3 @@
+name: "sibling-b"
+description: "Synthetic sibling source for MTP-30/31 import tests."
+customer_facing_name: "Sibling B Service"

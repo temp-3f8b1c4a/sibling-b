@@ -1,0 +1,6 @@
+subprocessors:
+  - provider: openai
+    party: OpenAI
+    purpose: Synthetic model inference
+    location: United States
+    dpa_path: trust/dpas/openai.txt
