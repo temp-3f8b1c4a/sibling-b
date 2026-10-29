@@ -1,0 +1,189 @@
+{
+  "schema_version": 2,
+  "hash_version": 1,
+  "graph_sha": "c6442fba043f91b5e61148a445280b3a16e188aa2b2001430792ab9fc93c41b5",
+  "system": {
+    "name": "sibling-b",
+    "description": "Synthetic sibling source for MTP-30/31 import tests.",
+    "customer_facing_name": "Sibling B Service"
+  },
+  "repo": "sibling-b",
+  "commit": "2d359e6afac9c9651c0596a164e8d0d48ca36dda",
+  "scanned_at": "2026-10-29T14:06:54.1493018+00:00",
+  "cli_version": "1.0.0",
+  "detector_packs": [
+    {
+      "name": "assist-dotnet",
+      "version": "1.0.0"
+    },
+    {
+      "name": "assist-go",
+      "version": "1.0.0"
+    },
+    {
+      "name": "assist-java",
+      "version": "1.0.0"
+    },
+    {
+      "name": "assist-js",
+      "version": "1.7.0"
+    },
+    {
+      "name": "assist-python",
+      "version": "1.4.0"
+    },
+    {
+      "name": "data-processing",
+      "version": "1.0.0"
+    },
+    {
+      "name": "raw-http",
+      "version": "1.0.0"
+    }
+  ],
+  "models": [
+    {
+      "provider": "openai",
+      "model_id": "gpt-4o",
+      "region": "us-east-1",
+      "source": "manual",
+      "evidence": [
+        {
+          "path": "trust/manual.yml",
+          "start_line": 3
+        }
+      ]
+    }
+  ],
+  "tools": [],
+  "mcp_servers": [],
+  "data_flows": [],
+  "controls": [
+    {
+      "name": "human_send_required",
+      "value": true,
+      "source": "manual",
+      "evidence": [
+        {
+          "path": "trust/manual.yml",
+          "start_line": 12
+        }
+      ]
+    },
+    {
+      "name": "kill_switch",
+      "value": true,
+      "source": "manual",
+      "evidence": [
+        {
+          "path": "trust/manual.yml",
+          "start_line": 15
+        }
+      ]
+    },
+    {
+      "name": "prompt_bodies_stored",
+      "value": false,
+      "source": "manual",
+      "evidence": [
+        {
+          "path": "trust/manual.yml",
+          "start_line": 9
+        }
+      ]
+    }
+  ],
+  "eval_gates": [],
+  "eval_results": [],
+  "subprocessors": [
+    {
+      "provider": "openai",
+      "party": "OpenAI",
+      "purpose": "Synthetic model inference",
+      "location": "United States",
+      "dpa_path": "trust/dpas/openai.txt",
+      "source": "manual",
+      "evidence": [
+        {
+          "path": "trust/dpas/openai.txt"
+        },
+        {
+          "path": "trust/subprocessors.yml",
+          "start_line": 2
+        }
+      ]
+    }
+  ],
+  "data_handling": [
+    {
+      "provider": "openai",
+      "retention": "days",
+      "retention_days": 30,
+      "training_use": "none",
+      "deletion_path": "trust/deletion-openai.md",
+      "source": "manual",
+      "evidence": [
+        {
+          "path": "trust/deletion-openai.md",
+          "start_line": 1
+        },
+        {
+          "path": "trust/dpas/openai.txt",
+          "start_line": 1
+        },
+        {
+          "path": "trust/manual.yml",
+          "start_line": 19
+        }
+      ]
+    }
+  ],
+  "findings": [],
+  "classification": {
+    "role": "unknown",
+    "gpai_provider": false,
+    "high_risk": "unknown",
+    "article_50": "unknown"
+  },
+  "coverage": {
+    "detector_packs": [
+      {
+        "name": "assist-dotnet",
+        "version": "1.0.0"
+      },
+      {
+        "name": "assist-go",
+        "version": "1.0.0"
+      },
+      {
+        "name": "assist-java",
+        "version": "1.0.0"
+      },
+      {
+        "name": "assist-js",
+        "version": "1.7.0"
+      },
+      {
+        "name": "assist-python",
+        "version": "1.4.0"
+      },
+      {
+        "name": "data-processing",
+        "version": "1.0.0"
+      },
+      {
+        "name": "raw-http",
+        "version": "1.0.0"
+      }
+    ],
+    "ecosystems": [],
+    "not_in_scope": [],
+    "method_limits": [
+      "allowlisted_configuration_patterns",
+      "manifest_and_lockfile_inventory",
+      "no_ast_analysis",
+      "no_runtime_inspection",
+      "tracked_files_only"
+    ]
+  }
+}
