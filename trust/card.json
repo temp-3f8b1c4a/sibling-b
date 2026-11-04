@@ -1,15 +1,15 @@
 {
   "schema_version": 2,
   "hash_version": 1,
-  "graph_sha": "862f108bee161a1e39dcf1e3180574cba0c86a69e6d9395eda706bb8ab77236f",
+  "graph_sha": "ee9cdb61f0e5f7dbf5fe2a86afca02bc836fff492dd3de03db02cccd228aad57",
   "system": {
     "name": "sibling-b",
     "description": "Synthetic sibling source for MTP-30/31 import tests.",
     "customer_facing_name": "Sibling B Service"
   },
   "repo": "sibling-b",
-  "commit": "3712dc1d760d971d69a60fafde13f4bac67f93da",
-  "scanned_at": "2026-10-29T14:36:07.9160996+00:00",
+  "commit": "b71846bf119dd69183df040327c13fb7200ae40a",
+  "scanned_at": "2026-11-04T19:53:11.3057621+00:00",
   "cli_version": "1.0.0",
   "detector_packs": [
     {
@@ -138,7 +138,42 @@
       ]
     }
   ],
-  "findings": [],
+  "findings": [
+    {
+      "id": "model-id-undeclared",
+      "severity": "medium",
+      "message": "The bedrock package is present but no model ID was found in an allowlisted configuration file.",
+      "path": "src/Bedrock/Bedrock.csproj",
+      "source": "inferred",
+      "evidence": [
+        {
+          "path": "src/Bedrock/Bedrock.csproj",
+          "start_line": 6,
+          "detector_pack": "assist-dotnet",
+          "rule": "package:csproj:AWSSDK.BedrockRuntime",
+          "package": "AWSSDK.BedrockRuntime",
+          "version": "3.7.400"
+        }
+      ]
+    },
+    {
+      "id": "subprocessor-undeclared",
+      "severity": "medium",
+      "message": "Provider \u0027bedrock\u0027 has no declared subprocessor.",
+      "source": "inferred",
+      "evidence": [
+        {
+          "path": "src/Bedrock/Bedrock.csproj",
+          "start_line": 6,
+          "detector_pack": "assist-dotnet",
+          "rule": "package:csproj:AWSSDK.BedrockRuntime",
+          "package": "AWSSDK.BedrockRuntime",
+          "version": "3.7.400"
+        }
+      ],
+      "subject": "bedrock"
+    }
+  ],
   "classification": {
     "role": "unknown",
     "gpai_provider": false,
@@ -176,7 +211,15 @@
         "version": "1.0.0"
       }
     ],
-    "ecosystems": [],
+    "ecosystems": [
+      {
+        "name": "dotnet",
+        "support": "supported",
+        "manifests": [
+          "src/Bedrock/Bedrock.csproj"
+        ]
+      }
+    ],
     "not_in_scope": [],
     "method_limits": [
       "allowlisted_configuration_patterns",

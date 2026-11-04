@@ -6,9 +6,9 @@
 
 - **System:** sibling-b
 - **Repository:** `sibling-b`
-- **Commit:** `3712dc1d760d971d69a60fafde13f4bac67f93da`
-- **Graph fingerprint:** `862f108bee16`
-- **Full fingerprint (SHA-256):** `862f108bee161a1e39dcf1e3180574cba0c86a69e6d9395eda706bb8ab77236f`
+- **Commit:** `b71846bf119dd69183df040327c13fb7200ae40a`
+- **Graph fingerprint:** `ee9cdb61f0e5`
+- **Full fingerprint (SHA-256):** `ee9cdb61f0e5f7dbf5fe2a86afca02bc836fff492dd3de03db02cccd228aad57`
 - **CLI version:** `1.0.0`
 - **Description:** Synthetic sibling source for MTP-30/31 import tests.
 - **Customer-facing name:** Sibling B Service
@@ -76,7 +76,8 @@ Trust declares, for each AI provider used by this system, how long prompts and c
 
 | ID | Severity | Message | Cite |
 |---|---|---|---|
-| none | info | No open scan findings. | none |
+| model-id-undeclared | medium | The bedrock package is present but no model ID was found in an allowlisted configuration file. | `src/Bedrock/Bedrock.csproj:6` (pack assist-dotnet, rule package:csproj:AWSSDK.BedrockRuntime, package AWSSDK.BedrockRuntime 3.7.400) |
+| subprocessor-undeclared | medium | Provider 'bedrock' has no declared subprocessor. | `src/Bedrock/Bedrock.csproj:6` (pack assist-dotnet, rule package:csproj:AWSSDK.BedrockRuntime, package AWSSDK.BedrockRuntime 3.7.400) |
 
 ## Coverage statement
 
@@ -94,7 +95,7 @@ This card describes only what AI TrustBOM detected in tracked repository files a
 
 **Ecosystems found with detector support:**
 
-- None found
+- dotnet (src/Bedrock/Bedrock.csproj)
 
 **Ecosystems found without detector support (AI use unknown):**
 
@@ -116,5 +117,85 @@ Ecosystems are recognised from tracked manifest and lockfile names only; an ecos
 
 ## Generated from
 
-Commit `3712dc1d760d971d69a60fafde13f4bac67f93da` using AI TrustBOM CLI `1.0.0`.
+Commit `b71846bf119dd69183df040327c13fb7200ae40a` using AI TrustBOM CLI `1.0.0`.
+
+## Gate assessment
+
+- **Status:** failed
+- **Summary:** The gate is blocked by 3 conditions.
+
+### Semantic changes
+
+- Added medium finding model-id-undeclared.
+- Added medium finding subprocessor-undeclared.
+- Changed coverage statement ecosystems (informational): none -\> dotnet (supported).
+- Changed coverage statement ecosystem manifests (informational): none -\> src/Bedrock/Bedrock.csproj.
+
+### Required actions
+
+#### The approved graph does not match this change
+
+Trust approved fingerprint 862f108bee16, but this branch produces ee9cdb61f0e5.
+
+Choose the appropriate resolution:
+
+- Revert or correct unintended AI-system changes.
+- Add a reasoned manual declaration when repository evidence is incomplete.
+- If the changes are intended, have Trust review the semantic changes and complete graph before approving the current fingerprint.
+
+Example:
+
+```yaml
+approved_graph_sha: ee9cdb61f0e5f7dbf5fe2a86afca02bc836fff492dd3de03db02cccd228aad57
+```
+
+#### Finding model-id-undeclared is not waived
+
+The model-id-undeclared finding is medium. This workflow blocks medium or higher, and no active waiver covers it.
+
+Evidence:
+
+- `src/Bedrock/Bedrock.csproj:6`
+
+Choose the appropriate resolution:
+
+- Fix the underlying finding and rerun the scan.
+- If Trust accepts the risk temporarily, add or renew a time-bounded waiver with a reason and reviewer.
+
+Example:
+
+```yaml
+waivers:
+  - finding_id: 'model-id-undeclared'
+    reason: <why the risk is accepted temporarily>
+    until: <yyyy-MM-dd>
+    by: <Trust reviewer>
+```
+
+#### Finding subprocessor-undeclared is not waived
+
+The subprocessor-undeclared finding is medium. This workflow blocks medium or higher, and no active waiver covers it.
+
+Evidence:
+
+- `src/Bedrock/Bedrock.csproj:6`
+
+Choose the appropriate resolution:
+
+- Fix the underlying finding and rerun the scan.
+- If Trust accepts the risk temporarily, add or renew a time-bounded waiver with a reason and reviewer.
+
+Example:
+
+```yaml
+waivers:
+  - finding_id: 'subprocessor-undeclared'
+    reason: <why the risk is accepted temporarily>
+    until: <yyyy-MM-dd>
+    by: <Trust reviewer>
+```
+
+### Next step
+
+Resolve every blocking condition below, then rerun AI TrustBOM.
 

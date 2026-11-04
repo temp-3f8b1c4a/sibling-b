@@ -1,5 +1,5 @@
 status: "draft (unapproved)"
-graph_sha: "862f108bee161a1e39dcf1e3180574cba0c86a69e6d9395eda706bb8ab77236f"
+graph_sha: "ee9cdb61f0e5f7dbf5fe2a86afca02bc836fff492dd3de03db02cccd228aad57"
 questions:
   - id: Q1_do_you_use_ai
     question: "Do you use AI?"
@@ -93,7 +93,7 @@ questions:
 coverage:
   - "This card describes only what AI TrustBOM detected in tracked repository files and what Trust declared manually. It does not establish that other AI use is absent: files, ecosystems and runtime behaviour outside the method below may contain AI use that was not detected."
   - "Detector packs used: assist-dotnet 1.0.0; assist-go 1.0.0; assist-java 1.0.0; assist-js 1.7.0; assist-python 1.4.0; data-processing 1.0.0; raw-http 1.0.0"
-  - "Ecosystems found with detector support: None found"
+  - "Ecosystems found with detector support: dotnet (src/Bedrock/Bedrock.csproj)"
   - "Ecosystems found without detector support (AI use unknown): None found"
   - "Not in scope (excluded by Trust): None declared"
   - "Method limits: Models, regions and endpoints are matched only in allowlisted configuration files by detector-pack patterns.; Ecosystems are recognised from manifest and lockfile names only.; Source code is not parsed; there is no AST or call-graph analysis.; Runtime behaviour, network traffic and deployed infrastructure are not inspected.; Only files tracked in Git at the scanned commit are read."

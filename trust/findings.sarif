@@ -10,7 +10,48 @@
           "informationUri": "https://github.com/resolveinterim/AI.TrustBOM"
         }
       },
-      "results": []
+      "results": [
+        {
+          "ruleId": "model-id-undeclared",
+          "level": "warning",
+          "message": {
+            "text": "The bedrock package is present but no model ID was found in an allowlisted configuration file."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/Bedrock/Bedrock.csproj"
+                },
+                "region": {
+                  "startLine": 6,
+                  "endLine": 6
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "subprocessor-undeclared",
+          "level": "warning",
+          "message": {
+            "text": "Provider \u0027bedrock\u0027 has no declared subprocessor."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/Bedrock/Bedrock.csproj"
+                },
+                "region": {
+                  "startLine": 6,
+                  "endLine": 6
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }
